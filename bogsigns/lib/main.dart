@@ -71,11 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.blue,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+      backgroundColor: Colors.blue,
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -95,14 +96,46 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const Text(
+              'Bienvenidos a Bogsings',
+                           style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            Image.asset(
+              'assets/images/logo.png',
+              width: 200,
+              height: 200,
+            ),
+            const SizedBox(height: 30),
+
+            // Botón 1
+            ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Iniciar cesion")),
+                );
+              },
+              child: const Text("Botón 1"),
+            ),
+            const SizedBox(height: 15),
+
+            // Botón 2
+            ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Registrarse")),
+                );
+              },
+              child: const Text("Botón 2"),
+            ),
           ],
         ),
       ),
-      
-      
     );
   }
-
-
 }
+          
