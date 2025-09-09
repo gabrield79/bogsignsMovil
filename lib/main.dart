@@ -101,7 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
                            style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.white
               ),
             ),
             const SizedBox(height: 20),
@@ -116,32 +115,22 @@ class _MyHomePageState extends State<MyHomePage> {
             // Botón 1
             ElevatedButton(
               onPressed: () {
-                if (mounted){
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Boton iniciar sesion presionado')),
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Iniciar cesion")),
                 );
-                }
               },
-              child: const Text(
-                'Iniciar Sesion',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+              child: const Text("Botón 1"),
             ),
             const SizedBox(height: 15),
 
             // Botón 2
             ElevatedButton(
               onPressed: () {
-                if (mounted){
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Boton registrarse presionado')),
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Registrarse")),
                 );
-                }
               },
-              child: const Text(
-                'Registrarse',
-                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                 ),
+              child: const Text("Botón 2"),
             ),
           ],
         ),
