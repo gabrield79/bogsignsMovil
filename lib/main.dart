@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SnackBar(content: Text("Iniciar cesion")),
                 );
               },
-              child: const Text("Botón 1"),
+              child: const Text("Iniciar Sesion"),
             ),
             const SizedBox(height: 15),
 
@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SnackBar(content: Text("Registrarse")),
                 );
               },
-              child: const Text("Botón 2"),
+              child: const Text("Registrarse"),
             ),
           ],
         ),
