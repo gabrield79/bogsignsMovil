@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 25),
 
             Image.asset(
               'assets/images/logo.png',
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("Iniciar Sesion"),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 25),
 
             // Botón 2
             ElevatedButton(
