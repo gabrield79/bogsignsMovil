@@ -1,4 +1,4 @@
-# bogsigns
+# Bogsigns
 
 Bogsings es un traductor de señas con el fin de que las personas sordas y oyentes se puedan comunicar de una mejor manera
 
