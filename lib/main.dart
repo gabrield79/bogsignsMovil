@@ -113,6 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 30),
 
             // Botón 1
+            //falta funcionalidad de los botones
+            //falta crear los formularios de inicio de sesion para que vaya a los formularios
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -124,6 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 25),
 
             // Botón 2
+            //Falta funcionalidad de los botones
+            // falta crear los formularios de registrarse
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -139,3 +143,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
           
+
