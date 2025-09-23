@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart';
+import 'register_screen.dart';
 
 
 
@@ -115,8 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //falta crear los formularios de inicio de sesion para que vaya a los formularios
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Iniciar cesion")),
+                Navigator.push(context, MaterialPageRoute(builder: (context)  => const LoginScreen()),  
                 );
               },
               child: const Text("Iniciar Sesion"),
@@ -128,8 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // falta crear los formularios de registrarse
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Registrarse")),
+                Navigator.push(context, MaterialPageRoute(builder: (context)  => const RegisterScreen()),  
                 );
               },
               child: const Text("Registrarse"),
