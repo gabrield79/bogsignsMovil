@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key}) ;
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -66,7 +66,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onPressed: () => Navigator.pushNamed(context, '/login'),
                 child: const Text('¿Ya tienes cuenta? Inicia sesión'),
               ),
-              if (_error != null)
+              //if (_error != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 16),
                   child: Text(_error!, style: const TextStyle(color: Colors.red)),

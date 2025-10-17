@@ -3,7 +3,7 @@ import 'package:local_auth/local_auth.dart';
 import '../services/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key}) ;
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
       if (didAuth) {
         if (!mounted) return;
-        Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/homeLogged');
       } else {
         setState(() => _error = 'Autenticación biométrica fallida');
       }
@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                //controller: _usernameController,
+                controller: _usernameController,
                 decoration: const InputDecoration(labelText: 'Usuario'),
                 validator: (v) => v == null || v.isEmpty ? 'Campo requerido' : null,
               ),
@@ -71,10 +71,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () => Navigator.pushNamed(context, '/register'),
                 child: const Text('¿No tienes cuenta? Regístrate'),
               ),
-              //if (_error != null)
+              if (_error != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 16),
-                 // child: Text(_error!, style: const TextStyle(color: Colors.red)),
+                  child: Text(_error!, style: const TextStyle(color: Colors.red)),
                 ),
             ],
           ),
