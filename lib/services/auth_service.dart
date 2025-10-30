@@ -22,21 +22,29 @@ class AuthService {
     return null;
   }
 
-  Future<bool> register(String username, String password) async {
+ Future<bool> register(String username, String password) async {
+  try {
     final url = Uri.parse('$baseUrl/users/register');
     final response = await http.post(
       url,
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'username': username, 'password': password}),
     );
-    return response.statusCode == 201;
-  }
 
-  Future<String?> getToken() async {
-    return await _storage.read(key: 'jwt');
-  }
+    print('📡 Código: ${response.statusCode}');
+    print('📦 Cuerpo: ${response.body}');
 
-  Future<void> logout() async {
-    await _storage.delete(key: 'jwt');
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      return true;
+    } else {
+      final data = jsonDecode(response.body);
+      print('⚠️ Mensaje del servidor: ${data['message']}');
+      return false;
+    }
+  } catch (e) {
+    print('❌ Excepción en register: $e');
+    return false;
   }
+}
+
 }

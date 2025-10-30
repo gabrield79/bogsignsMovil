@@ -3,7 +3,7 @@ import 'package:local_auth/local_auth.dart';
 import '../services/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key}) ;
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -26,12 +26,12 @@ class _LoginScreenState extends State<LoginScreen> {
     if (token != null) {
       // Intentar autenticación biométrica
       final didAuth = await _localAuth.authenticate(
-      localizedReason: 'Autentícate para acceder',
-       options: const AuthenticationOptions(biometricOnly: true),
+        localizedReason: 'Autentícate para acceder',
+        options: const AuthenticationOptions(biometricOnly: true),
       );
       if (didAuth) {
         if (!mounted) return;
-        Navigator.pushReplacementNamed(context, '/homeLogged');
+        Navigator.pushReplacementNamed(context, '/home');
       } else {
         setState(() => _error = 'Autenticación biométrica fallida');
       }

@@ -36,6 +36,7 @@ dependencies:
   youtube_player_flutter: ^9.0.1
   audioplayers: ^6.1.0
   http: ^1.2.2
+  sensors_plus: ^7.0.0
 
 dev_dependencies:
   flutter_test:

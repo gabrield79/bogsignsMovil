@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key}) ;
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -17,23 +17,35 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String? _success;
 
   Future<void> _register() async {
-    if (_formKey.currentState?.validate() != true) return;
+  if (_formKey.currentState?.validate() != true) return;
+
+  try {
+    print('🟢 Intentando registrar...');
     final ok = await _authService.register(
       _usernameController.text,
       _passwordController.text,
     );
-    if (ok) {
-      setState(() {
+    print('🔵 Resultado del registro: $ok');
+
+    setState(() {
+      if (ok) {
         _success = 'Registro exitoso. Ahora puedes iniciar sesión.';
         _error = null;
-      });
-    } else {
-      setState(() {
+      } else {
         _error = 'No se pudo registrar. El usuario puede existir.';
         _success = null;
-      });
-    }
+      }
+    });
+  } catch (e, stack) {
+    print('❌ Excepción en _register: $e');
+    print(stack);
+    setState(() {
+      _error = 'Error inesperado: $e';
+      _success = null;
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,14 +71,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: _register,
+                  onPressed: () {
+                  print('Botón presionado'); // 👈 prueba
+                  _register();
+                 },
                 child: const Text('Registrarse'),
               ),
+
               TextButton(
                 onPressed: () => Navigator.pushNamed(context, '/login'),
                 child: const Text('¿Ya tienes cuenta? Inicia sesión'),
               ),
-              //if (_error != null)
+              if (_error != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 16),
                   child: Text(_error!, style: const TextStyle(color: Colors.red)),

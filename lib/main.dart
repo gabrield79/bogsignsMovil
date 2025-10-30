@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/home_screen.dart';
-import 'screens/homeLogged_screen.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
         '/home': (context) => const HomeScreen(),
-        '/homelogged': (context) => const HommeLoggedScreen (),
 
       },
     );
