@@ -1,8 +1,11 @@
 import 'package:bogsignsMovil/screens/logged_screen.dart';
+import 'package:bogsignsMovil/screens/senas_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/logged_screen.dart';
+import 'screens/senas_screen.dart';
 
 
 void main() {
@@ -27,6 +30,8 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const RegisterScreen(),
         '/home': (context) => const HomeScreen(),
         '/logged': (context) => const LoggedScreen(),
+        '/senas': (context) => const SenasScreen(),
+
 
       },
     );
